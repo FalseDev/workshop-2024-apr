@@ -1,0 +1,66 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-in-docker
+{
+	"$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+	"name": "Docker in Docker",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:dev-debian",
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"version": "latest",
+			"enableNonRootDocker": "true",
+			"moby": "false"
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"installTools": true,
+			"enableShared": true,
+			"installJupyterlab": true,
+			"version": "3.11"
+		},
+		"ghcr.io/devcontainers-contrib/features/act-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/postgres-asdf:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/typst:1": {
+			"version": "latest"
+		},
+		"ghcr.io/warrenbuckley/codespace-features/sqlite:1": {}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		8000,
+		5137
+	],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "docker --version",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bmalehorn.vscode-fish",
+				"charliermarsh.ruff",
+				"jacobpfeifer.pfeifer-hurl",
+				"mechatroner.rainbow-csv",
+				"ms-python.debugpy",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.jupyter-keymap",
+				"ms-toolsai.jupyter-renderers",
+				"ms-toolsai.vscode-jupyter-cell-tags",
+				"ms-toolsai.vscode-jupyter-slideshow",
+				"skellock.just",
+				"tomoki1207.pdf",
+				"usernamehw.errorlens",
+				"yzhang.markdown-all-in-one"
+			]
+		}
+	}
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
